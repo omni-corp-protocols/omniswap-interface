@@ -1,4 +1,5 @@
-import { JSBI, TokenAmount } from '@venomswap/sdk'
+// import { JSBI, TokenAmount } from '@venomswap/sdk'
+import { TokenAmount } from '@venomswap/sdk'
 import { isAddress } from 'ethers/lib/utils'
 import React, { useEffect, useState } from 'react'
 import { Text } from 'rebass'
@@ -90,10 +91,10 @@ export default function ClaimModal() {
     }
   }, [attempting, claimConfirmed, claimSubmitted, isOpen, toggleClaimModal])
 
-  const nonLPAmount = JSBI.multiply(
-    JSBI.BigInt((userClaimData?.flags?.isSOCKS ? SOCKS_AMOUNT : 0) + (userClaimData?.flags?.isUser ? USER_AMOUNT : 0)),
-    JSBI.exponentiate(JSBI.BigInt(10), JSBI.BigInt(18))
-  )
+  // const nonLPAmount = JSBI.multiply(
+  //   JSBI.BigInt((userClaimData?.flags?.isSOCKS ? SOCKS_AMOUNT : 0) + (userClaimData?.flags?.isUser ? USER_AMOUNT : 0)),
+  //   JSBI.exponentiate(JSBI.BigInt(10), JSBI.BigInt(18))
+  // )
 
   return (
     <Modal isOpen={isOpen} onDismiss={toggleClaimModal} maxHeight={90}>
@@ -109,7 +110,7 @@ export default function ClaimModal() {
                 <CloseIcon onClick={toggleClaimModal} style={{ zIndex: 99 }} color="white" />
               </RowBetween>
               <TYPE.white fontWeight={700} fontSize={36}>
-                {unclaimedAmount?.toFixed(0, { groupSeparator: ',' } ?? '-')} {govToken?.symbol}
+                {unclaimedAmount} {govToken?.symbol}
               </TYPE.white>
             </CardSection>
             <Break />
@@ -122,9 +123,9 @@ export default function ClaimModal() {
                   </TYPE.subHeader>
                 </RowBetween>
               )}
-              {userClaimData?.flags?.isLP &&
+              {/*{userClaimData?.flags?.isLP &&
                 unclaimedAmount &&
-                JSBI.greaterThanOrEqual(unclaimedAmount.raw, nonLPAmount) && (
+                JSBI.greaterThanOrEqual(unclaimedAmount, nonLPAmount) && (
                   <RowBetween>
                     <TYPE.subHeader color="white">Liquidity</TYPE.subHeader>
                     <TYPE.subHeader color="white">
@@ -134,7 +135,7 @@ export default function ClaimModal() {
                       UNI
                     </TYPE.subHeader>
                   </RowBetween>
-                )}
+                )}*/}
               {userClaimData?.flags?.isUser && (
                 <RowBetween>
                   <TYPE.subHeader color="white">User</TYPE.subHeader>
@@ -186,7 +187,7 @@ export default function ClaimModal() {
               </TYPE.largeHeader>
               {!claimConfirmed && (
                 <Text fontSize={36} color={'#ff007a'} fontWeight={800}>
-                  {unclaimedAmount?.toFixed(0, { groupSeparator: ',' } ?? '-')} {govToken?.symbol}
+                  {unclaimedAmount} {govToken?.symbol}
                 </Text>
               )}
             </AutoColumn>

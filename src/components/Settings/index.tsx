@@ -104,6 +104,10 @@ const MenuFlyout = styled.span`
   `};
 `
 
+const ColoredText = styled(Text)`
+  color: ${({ theme }) => theme.white};
+`
+
 const Break = styled.div`
   width: 100%;
   height: 1px;
@@ -146,20 +150,20 @@ export default function SettingsTab() {
           <AutoColumn gap="lg">
             <RowBetween style={{ padding: '0 2rem' }}>
               <div />
-              <Text fontWeight={500} fontSize={20}>
+              <ColoredText fontWeight={500} fontSize={20}>
                 Are you sure?
-              </Text>
+              </ColoredText>
               <StyledCloseIcon onClick={() => setShowConfirmation(false)} />
             </RowBetween>
             <Break />
             <AutoColumn gap="lg" style={{ padding: '0 2rem' }}>
-              <Text fontWeight={500} fontSize={20}>
+              <ColoredText fontWeight={500} fontSize={20}>
                 Expert mode turns off the confirm transaction prompt and allows high slippage trades that often result
                 in bad rates and lost funds.
-              </Text>
-              <Text fontWeight={600} fontSize={20}>
+              </ColoredText>
+              <ColoredText fontWeight={600} fontSize={20}>
                 ONLY USE THIS MODE IF YOU KNOW WHAT YOU ARE DOING.
-              </Text>
+              </ColoredText>
               <ButtonError
                 error={true}
                 padding={'12px'}
@@ -170,9 +174,9 @@ export default function SettingsTab() {
                   }
                 }}
               >
-                <Text fontSize={20} fontWeight={500} id="confirm-expert-mode">
+                <ColoredText fontSize={20} fontWeight={500} id="confirm-expert-mode">
                   Turn On Expert Mode
-                </Text>
+                </ColoredText>
               </ButtonError>
             </AutoColumn>
           </AutoColumn>
@@ -191,21 +195,21 @@ export default function SettingsTab() {
       {open && (
         <MenuFlyout>
           <AutoColumn gap="md" style={{ padding: '1rem' }}>
-            <Text fontWeight={600} fontSize={14}>
+            <ColoredText fontWeight={600} fontSize={14}>
               Transaction Settings
-            </Text>
+            </ColoredText>
             <TransactionSettings
               rawSlippage={userSlippageTolerance}
               setRawSlippage={setUserslippageTolerance}
               deadline={ttl}
               setDeadline={setTtl}
             />
-            <Text fontWeight={600} fontSize={14}>
+            <ColoredText fontWeight={600} fontSize={14}>
               Interface Settings
-            </Text>
+            </ColoredText>
             <RowBetween>
               <RowFixed>
-                <TYPE.black fontWeight={400} fontSize={14} color={theme.text2}>
+                <TYPE.black fontWeight={400} fontSize={14} color={theme.text3}>
                   Toggle Expert Mode
                 </TYPE.black>
                 <QuestionHelper text="Bypasses confirmation modals and allows high slippage trades. Use at your own risk." />
@@ -228,7 +232,7 @@ export default function SettingsTab() {
             </RowBetween>
             <RowBetween>
               <RowFixed>
-                <TYPE.black fontWeight={400} fontSize={14} color={theme.text2}>
+                <TYPE.black fontWeight={400} fontSize={14} color={theme.text3}>
                   Disable Multihops
                 </TYPE.black>
                 <QuestionHelper text="Restricts swaps to direct pairs only." />

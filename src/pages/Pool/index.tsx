@@ -13,6 +13,8 @@ import Card from '../../components/Card'
 import { RowBetween, RowFixed } from '../../components/Row'
 import { ButtonPrimary, ButtonSecondary } from '../../components/Button'
 import { AutoColumn } from '../../components/Column'
+import { AutoRow } from '../../components/Row'
+import SwapMenu from '../../components/SwapMenu'
 
 import { useActiveWeb3React } from '../../hooks'
 import { usePairs } from '../../data/Reserves'
@@ -24,7 +26,7 @@ import { BIG_INT_ZERO } from '../../constants'
 
 import { Blockchain } from '@venomswap/sdk'
 import useBlockchain from '../../hooks/useBlockchain'
-import baseCurrencies from '../../utils/baseCurrencies'
+// import baseCurrencies from '../../utils/baseCurrencies'
 
 const PageWrapper = styled(AutoColumn)`
   max-width: 640px;
@@ -84,12 +86,15 @@ const EmptyProposals = styled.div`
 
 export default function Pool() {
   const theme = useContext(ThemeContext)
-  const { account, chainId } = useActiveWeb3React()
+  const { account } = useActiveWeb3React()
   const blockchain = useBlockchain()
 
-  const baseCurrency = baseCurrencies(chainId)[0]
-  const addLiquidityUrl = `/add/${baseCurrency.symbol}`
-  const createPoolUrl = `/create/${baseCurrency.symbol}`
+  // const baseCurrency = baseCurrencies(chainId)[0]
+  // const addLiquidityUrl = `/add/${baseCurrency.symbol}`
+  // const createPoolUrl = `/create/${baseCurrency.symbol}`
+  const usdoAddress = '0x5801d0e1c7d977d78e4890880b8e579eb4943276'
+  const addLiquidityUrl = `/add/${usdoAddress}`
+  const createPoolUrl = `/create/${usdoAddress}`
 
   // fetch the user's balances of all tracked V2 LP tokens
   const trackedTokenPairs = useTrackedTokenPairs()
@@ -139,6 +144,10 @@ export default function Pool() {
   return (
     <>
       <PageWrapper>
+        <AutoRow justify={'center'}>
+          <SwapMenu />
+        </AutoRow>
+        <br />
         <SwapPoolTabs active={'pool'} />
         <VoteCard>
           <CardBGImage />
@@ -172,7 +181,7 @@ export default function Pool() {
           <AutoColumn gap="lg" style={{ width: '100%' }}>
             <TitleRow style={{ marginTop: '1rem' }} padding={'0'}>
               <HideSmall>
-                <TYPE.mediumHeader style={{ marginTop: '0.5rem', justifySelf: 'flex-start' }}>
+                <TYPE.mediumHeader style={{ marginTop: '0.5rem', justifySelf: 'flex-start', color: 'white' }}>
                   Your liquidity
                 </TYPE.mediumHeader>
               </HideSmall>
@@ -241,7 +250,7 @@ export default function Pool() {
             )}
 
             <AutoColumn justify={'center'} gap="md">
-              <Text textAlign="center" fontSize={14} style={{ padding: '.5rem 0 .5rem 0' }}>
+              <Text textAlign="center" fontSize={14} style={{ padding: '.5rem 0 .5rem 0' }} color={'#a3a5ae'}>
                 {hasV1Liquidity ? 'Viperswap V1 liquidity found!' : "Don't see a pool you joined?"}{' '}
                 <StyledInternalLink id="import-pool-link" to={hasV1Liquidity ? '/migrate/v1' : '/find'}>
                   {hasV1Liquidity ? 'Migrate now.' : 'Import it.'}

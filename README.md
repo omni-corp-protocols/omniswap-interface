@@ -1,30 +1,26 @@
-# Venomswap Interface
+# Omniswap Interface
 
 [![Lint](https://github.com/Uniswap/uniswap-interface/workflows/Lint/badge.svg)](https://github.com/Uniswap/uniswap-interface/actions?query=workflow%3ALint)
 [![Tests](https://github.com/Uniswap/uniswap-interface/workflows/Tests/badge.svg)](https://github.com/Uniswap/uniswap-interface/actions?query=workflow%3ATests)
 [![Styled With Prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg)](https://prettier.io/)
 
-An open source interface for Uniswap -- a protocol for decentralized exchange of Ethereum tokens.
+An open source interface for Omniiswap -- a protocol for decentralized exchange of BEP20 tokens.
 
-- Website: [uniswap.org](https://uniswap.org/)
-- Interface: [app.uniswap.org](https://app.uniswap.org)
+- Website: [ocp.finance](https://ocp.finance/)
+- Interface: [swap.ocp.finance](https://swap.ocp.finance)
 - Docs: [uniswap.org/docs/](https://uniswap.org/docs/)
-- Twitter: [@UniswapProtocol](https://twitter.com/UniswapProtocol)
-- Reddit: [/r/Uniswap](https://www.reddit.com/r/Uniswap/)
-- Email: [contact@uniswap.org](mailto:contact@uniswap.org)
-- Discord: [Uniswap](https://discord.gg/FCfyBSbCU5)
+- Twitter: [@omnic_pro](https://twitter.com/omnic_pro)
+- Discord: [OCP](https://discord.com/invite/8Y5jvjFgsC)
 - Whitepaper: [Link](https://hackmd.io/C-DvwDSfSxuh-Gd4WKE_ig)
 
-## Accessing the Venomswap Interface
+## Accessing the Omniswap Interface
 
-To access the Venomswap Interface, use an IPFS gateway link from the
-[latest release](https://github.com/Uniswap/uniswap-interface/releases/latest), 
-or visit [app.uniswap.org](https://app.uniswap.org).
+To access the Omniswap Interface, [swap.ocp.finance](https://swap.ocp.finance).
 
 ## Listing a token
 
 Please see the
-[@venomswap/default-token-list](https://github.com/uniswap/default-token-list) 
+[@omniswap/default-token-list](https://github.com/omni-corp-protocols/omniswap-default-token-list) 
 repository.
 
 ## Development

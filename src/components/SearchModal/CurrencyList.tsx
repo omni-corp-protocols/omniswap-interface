@@ -131,7 +131,7 @@ function CurrencyRow({
     >
       <CurrencyLogo currency={currency} size={'24px'} />
       <Column>
-        <Text title={currency.name} fontWeight={500}>
+        <Text title={currency.name} fontWeight={550}>
           {currency.symbol}
         </Text>
         <TYPE.darkGray ml="0px" fontSize={'12px'} fontWeight={300}>
@@ -203,7 +203,7 @@ export default function CurrencyList({
               <RowBetween>
                 <RowFixed>
                   <TokenListLogoWrapper src={TokenListLogo} />
-                  <TYPE.main ml="6px" fontSize="12px" color={theme.text1}>
+                  <TYPE.main ml="6px" fontSize="12px" color={theme.text3}>
                     Expanded results from inactive Token Lists
                   </TYPE.main>
                 </RowFixed>

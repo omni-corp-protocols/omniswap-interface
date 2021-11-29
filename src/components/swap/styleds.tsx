@@ -41,7 +41,7 @@ export const ErrorText = styled(Text)<{ severity?: 0 | 1 | 2 | 3 | 4 }>`
       : severity === 2
       ? theme.yellow2
       : severity === 1
-      ? theme.text1
+      ? theme.text3
       : theme.green1};
 `
 
@@ -113,7 +113,7 @@ const SwapCallbackErrorInner = styled.div`
   p {
     padding: 0;
     margin: 0;
-    font-weight: 500;
+    font-weight: 550;
   }
 `
 

@@ -27,7 +27,7 @@ export const Button = styled.button.attrs<{ warning: boolean }, { backgroundColo
   backgroundColor: warning ? theme.red1 : theme.primary1
 }))`
   padding: 1rem 2rem 1rem 2rem;
-  border-radius: 3rem;
+  border-radius: 6px;
   cursor: pointer;
   user-select: none;
   font-size: 1rem;
@@ -79,7 +79,7 @@ export const LinkStyledButton = styled.button<{ disabled?: boolean }>`
 
   cursor: ${({ disabled }) => (disabled ? 'default' : 'pointer')};
   color: ${({ theme, disabled }) => (disabled ? theme.text2 : theme.primary1)};
-  font-weight: 500;
+  font-weight: 550;
 
   :hover {
     text-decoration: ${({ disabled }) => (disabled ? null : 'underline')};
@@ -100,7 +100,7 @@ export const StyledInternalLink = styled(Link)`
   text-decoration: none;
   cursor: pointer;
   color: ${({ theme }) => theme.primary1};
-  font-weight: 500;
+  font-weight: 550;
 
   :hover {
     text-decoration: underline;
@@ -120,7 +120,7 @@ const StyledLink = styled.a`
   text-decoration: none;
   cursor: pointer;
   color: ${({ theme }) => theme.primary1};
-  font-weight: 500;
+  font-weight: 550;
 
   :hover {
     text-decoration: underline;

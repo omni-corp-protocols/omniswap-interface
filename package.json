@@ -1,10 +1,11 @@
 {
-  "name": "@venomswap/interface",
-  "description": "Venomswap Interface",
+  "name": "@omniswap/interface",
+  "description": "Omniswap Interface",
   "homepage": ".",
   "private": true,
   "devDependencies": {
     "@ethersproject/experimental": "^5.1.2",
+    "@omniswap/default-token-list": "^1.0.0",
     "@popperjs/core": "^2.4.4",
     "@reach/dialog": "^0.10.3",
     "@reach/portal": "^0.10.3",
@@ -34,14 +35,14 @@
     "@venomswap/contracts": "^1.0.4",
     "@venomswap/core": "^1.0.0",
     "@venomswap/periphery": "^1.0.0",
-    "@venomswap/sdk": "^1.0.5",
-    "@venomswap/sdk-extra": "^1.0.5",
+    "@venomswap/sdk": "https://github.com/omni-corp-protocols/venomswap-sdk#main",
+    "@venomswap/sdk-extra": "https://github.com/omni-corp-protocols/venomswap-sdk-extra#main",
     "@web3-react/core": "^6.0.9",
     "@web3-react/fortmatic-connector": "^6.0.9",
     "@web3-react/injected-connector": "^6.0.7",
     "@web3-react/portis-connector": "^6.0.9",
-    "@web3-react/walletconnect-connector": "^6.1.1",
-    "@web3-react/walletlink-connector": "^6.0.9",
+    "@web3-react/walletconnect-connector": "^6.2.0",
+    "@web3-react/walletlink-connector": "^6.2.8",
     "ajv": "^6.12.3",
     "cids": "^1.1.6",
     "copy-to-clipboard": "^3.2.0",
@@ -129,6 +130,6 @@
   },
   "license": "GPL-3.0-or-later",
   "dependencies": {
-    "@venomswap/default-token-list": "^2.1.0"
+    "react-external-link": "^1.2.2"
   }
 }
